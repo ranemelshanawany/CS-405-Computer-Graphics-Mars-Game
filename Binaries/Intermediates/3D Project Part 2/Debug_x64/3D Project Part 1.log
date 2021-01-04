@@ -1,0 +1,10 @@
+﻿  main.cpp
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(535): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(571): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(575): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(579): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(583): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(587): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\raneem\onedrive\documents\visual studio 2015\projects\3d project part 2\3d project part 1\source\main.cpp(591): warning C4305: '-=': truncation from 'double' to 'float'
+  3D Project Part 1.vcxproj -> C:\Users\Raneem\OneDrive\Documents\Visual Studio 2015\Projects\3D Project Part 2\3D Project Part 1\3D Project Part 2.exe
+  3D Project Part 1.vcxproj -> C:\Users\Raneem\OneDrive\Documents\Visual Studio 2015\Projects\3D Project Part 2\3D Project Part 1\3D Project Part 2.pdb (Partial PDB)
