@@ -79,7 +79,7 @@
     <IntDir>$(SolutionDir)\Binaries\Intermediates\$(ProjectName)\$(Configuration)_$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)</OutDir>
+    <OutDir>..\Binaries\3D Project Part 2\Debug_x64</OutDir>
     <IntDir>$(SolutionDir)\Binaries\Intermediates\$(ProjectName)\$(Configuration)_$(Platform)\</IntDir>
     <IncludePath>C:\Program Files (x86)\VC\include;C:\Program Files (x86)\VC\atlmfc\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;C:\Program Files (x86)\Windows Kits\8.1\Include\winrt</IncludePath>
   </PropertyGroup>

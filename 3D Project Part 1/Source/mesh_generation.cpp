@@ -20,16 +20,17 @@ void GenerateParametricShapeFrom2D(
 	positions.reserve(vertical_segments * rotation_segments);
 	for (int r = 0; r < rotation_segments; ++r)
 		for (int v = 0; v < vertical_segments; ++v)
-			positions.push_back(parametric_surface(v / double(vertical_segments - 1), r / double(rotation_segments - 1)));
+			positions.push_back(
+				parametric_surface(v / double(vertical_segments - 1), r / double(rotation_segments - 1)));
 
 	normals.reserve(vertical_segments * rotation_segments);
 	for (int r = 0; r < rotation_segments; ++r)
 		for (int v = 0; v < vertical_segments; ++v)
 		{
 			auto nv = v / double(vertical_segments - 1);
-			auto nr = r / double(rotation_segments);
+			auto nr = r / double(rotation_segments - 1);
 			auto epsilonv = 1 / double(vertical_segments - 1);
-			auto epsilonr = 1 / double(rotation_segments);
+			auto epsilonr = 1 / double(rotation_segments - 1);
 
 			auto to_next_v = parametric_surface(nv + epsilonv, nr) - parametric_surface(nv, nr);
 			auto from_prev_v = parametric_surface(nv, nr) - parametric_surface(nv - epsilonv, nr);
@@ -44,16 +45,16 @@ void GenerateParametricShapeFrom2D(
 		}
 
 	uvs.reserve(vertical_segments * rotation_segments);
-	for (int r = 0; r < rotation_segments ; ++r)
-		for (int v = 0; v < vertical_segments ; ++v)
-			uvs.push_back(glm::vec2(r / double(rotation_segments - 1), v / double(vertical_segments -1)));
+	for (int r = 0; r < rotation_segments; ++r)
+		for (int v = 0; v < vertical_segments; ++v)
+			uvs.push_back(glm::vec2(r / double(rotation_segments - 1), v / double(vertical_segments - 1)));
 
 	auto VRtoIndex = [vertical_segments, rotation_segments](int v, int r)
 	{
 		return (r % rotation_segments) * vertical_segments + v;
 	};
 	indices.reserve(rotation_segments * (vertical_segments - 1) * 6);
-	for (int r = 0; r < rotation_segments -1; ++r)
+	for (int r = 0; r < rotation_segments - 1; ++r)
 		for (int v = 0; v < vertical_segments - 1; ++v)
 		{
 			indices.push_back(VRtoIndex(v + 1, r));
@@ -78,16 +79,16 @@ void GenerateParametricShapeFrom3D(
 	positions.reserve(vertical_segments * rotation_segments);
 	for (int r = 0; r < rotation_segments; ++r)
 		for (int v = 0; v < vertical_segments; ++v)
-			positions.push_back(parametric_surface(v / double(vertical_segments - 1), r / double(rotation_segments)));
+			positions.push_back(parametric_surface(v / double(vertical_segments - 1), r / double(rotation_segments -1)));
 
 	normals.reserve(vertical_segments * rotation_segments);
 	for (int r = 0; r < rotation_segments; ++r)
 		for (int v = 0; v < vertical_segments; ++v)
 		{
 			auto nv = v / double(vertical_segments - 1);
-			auto nr = r / double(rotation_segments);
+			auto nr = r / double(rotation_segments - 1);
 			auto epsilonv = 1 / double(vertical_segments - 1);
-			auto epsilonr = 1 / double(rotation_segments);
+			auto epsilonr = 1 / double(rotation_segments - 1);
 
 			auto to_next_v = parametric_surface(nv + epsilonv, nr) - parametric_surface(nv, nr);
 			auto from_prev_v = parametric_surface(nv, nr) - parametric_surface(nv - epsilonv, nr);
@@ -146,7 +147,7 @@ glm::dvec2 ParametricCircle(double t)
 	// [-PI, PI]
 
 	auto c = glm::dvec2(0.7, 0);
-	auto r = 0.3;
+	auto r = 0.4;
 	return glm::dvec2(cos(t), sin(t)) * r + c;
 };
 
@@ -163,3 +164,4 @@ glm::dvec2 ParametricSpikes(double t)
 	auto a = 2 + 4 * 2;
 	return (glm::dvec2(cos(t) + sin(a*t) / a, sin(t) + cos(a*t) / a)) * r + c;
 };
+
